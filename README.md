@@ -1,39 +1,43 @@
-# Howz.Dev - Personal Website and Blog
+# HieuThahn - Personal Website and Blog
 
-![](https://img.shields.io/github/issues/howznguyen/howz.dev?color=0088ff)
-![](https://img.shields.io/github/languages/top/howznguyen/howz.dev)
-![](https://img.shields.io/github/manifest-json/v/howznguyen/howz.dev)
-![](https://img.shields.io/github/discussions/howznguyen/howz.dev)
+![](https://img.shields.io/github/issues/hieuthahn/my-blog?color=0088ff)
+![](https://img.shields.io/github/languages/top/hieuthahn/my-blog)
+![](https://img.shields.io/github/manifest-json/v/hieuthahn/my-blog)
+![](https://img.shields.io/github/discussions/hieuthahn/my-blog)
 
 💠 This is my personal website and blog, built using Next.js, TypeScript, Tailwind CSS, and Notion. The blog posts are managed in Notion, and the website pulls the content from the Notion API at build time.
 
 ## Notable Features
 
-- Landing page with customizable background image and hero text
-- Blog page with pagination and search functionality
-- Separate pages for each blog post
-- Dynamically generated RSS feed
-- Automatic sitemap generation
-- Notion as a CMS for blog content management
-- Integration with Giscus for comment section
+-   Landing page with customizable background image and hero text
+-   Blog page with pagination and search functionality
+-   Separate pages for each blog post
+-   Dynamically generated RSS feed
+-   Automatic sitemap generation
+-   Notion as a CMS for blog content management
+-   Integration with Giscus for comment section
 
 ## Setup & Config
+
 To get started with this project, follow these steps:
 
 To get started with this project, you can clone the repository and install the dependencies:
+
 ```bash
-git clone https://github.com/howznguyen/howz.dev.git
-cd howz.dev
+git clone https://github.com/hieuthahn/my-blog.git
+cd my-blog
 npm install
 ```
 
 Copy the .env file to .env.example:
+
 ```bash
 cp .env .env.example
 ```
+
 ### Notion Database Setup
 
-You can duplicate the Notion page for database template [here](https://howznguyen.notion.site/Howz-Nguyen-Blog-Template-6085aaf78b84462bb137db0e8fea2676). 
+You can duplicate the Notion page for database template [here](https://howznguyen.notion.site/Howz-Nguyen-Blog-Template-6085aaf78b84462bb137db0e8fea2676).
 
 Once you have your own duplicate page, you can get the `NOTION_API_KEY` and database IDs needed to run the project. To get your `NOTION_API_KEY`, follow these steps:
 
@@ -44,6 +48,7 @@ Once you have your own duplicate page, you can get the `NOTION_API_KEY` and data
 5. You should now see your integration details page. You can find your `NOTION_API_KEY` under the "Internal Integration Tokens" section.
 
 To add your app into page, folow these steps:
+
 1. Open your duplicated database in Notion.
 2. Click on the three dots in the top-right corner of the page.
 3. Then you selecting "Add connections" and choosing your app name.
@@ -76,8 +81,11 @@ GISCUS_CATEGORY_ID=category-id
 ### Running the Project
 
 To run the project, you can use the following command:
+
 ```bash
 npm run start:all
 ```
 
 The project will be available at [http://localhost:3000](http://localhost:3000).
+
+Resources: https://howz.dev/

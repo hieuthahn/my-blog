@@ -1,5 +1,5 @@
 const Image = {
-  convertImage: (w: number, h: number) => `
+    convertImage: (w: number, h: number) => `
     <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <defs>
         <linearGradient id="g">
@@ -12,11 +12,10 @@ const Image = {
       <rect id="r" width="${w}" height="${h}" fill="url(#g)" />
       <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  />
     </svg>`,
-  toBase64: (str: string) =>
-    typeof window === "undefined"
-      ? Buffer.from(str).toString("base64")
-      : window.btoa(str),
-  generaterImagePlaceholder : (TranferToBase64 = true, w = 800, h = 800) => TranferToBase64 ? Image.toBase64(Image.convertImage(w, h)) : Image.convertImage(w, h) 
+    toBase64: (str: string) =>
+        typeof window === 'undefined' ? Buffer.from(str).toString('base64') : window.btoa(str),
+    generaterImagePlaceholder: (TranferToBase64 = true, w = 800, h = 800) =>
+        TranferToBase64 ? Image.toBase64(Image.convertImage(w, h)) : Image.convertImage(w, h)
 };
 
 export default Image;

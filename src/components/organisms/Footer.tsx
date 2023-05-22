@@ -7,8 +7,8 @@ const Footer = ({}: FooterProps) => {
     const trans = useTrans();
 
     return (
-        <footer className="mt-4 pb-2">
-            <main className="layout flex flex-col items-center border-t pt-6 dark:border-gray-600">
+        <footer className="pb-2 mt-4">
+            <main className="flex flex-col items-center pt-6 border-t layout dark:border-gray-600">
                 <div className="flex flex-wrap justify-center gap-y-4 gap-x-8">
                     {trans.footer.links &&
                         trans.footer.links.map((item: any, i: number) => (
@@ -22,7 +22,7 @@ const Footer = ({}: FooterProps) => {
                     {trans.footer.about_me}
                 </p>
 
-                <div className="mt-2 flex space-x-4">
+                <div className="flex mt-2 space-x-4">
                     {trans.footer.social_networks.map((item: any, i: number) => (
                         <Link href={item.link} title={item.title} key={i}>
                             <Icon
@@ -47,8 +47,8 @@ const Footer = ({}: FooterProps) => {
                         Notion
                     </Link>
                     . {trans.footer.develop_by}
-                    <Link href="https://github.com/howznguyen" target="_blank">
-                        @howznguyen
+                    <Link href="https://github.com/hieuthahn" target="_blank">
+                        @hieuthahn
                     </Link>
                     {trans.footer.with} ❤️ .
                 </p>

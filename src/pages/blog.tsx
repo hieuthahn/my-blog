@@ -23,7 +23,7 @@ const BlogPage = ({ posts, head, options }: BlogPageProps) => {
 
     const findPosts = (e: any) => {
         let filteredPosts = statePosts.filter((post: any) => {
-            return removeAccents(post.title.toLowerCase()).includes(
+            return removeAccents(post?.title.toLowerCase()).includes(
                 removeAccents(e.target.value.toLowerCase())
             );
         });

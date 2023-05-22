@@ -8,8 +8,8 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     let tags = await Notion.getTags();
 
     let fieldsPosts = posts.map(post => ({
-        loc: Route.post(post.slug, true),
-        lastmod: post.published.start
+        loc: Route.post(post?.slug, true),
+        lastmod: post?.published.start
     }));
 
     let fieldTags = tags.map((tag: any) => ({

@@ -113,7 +113,7 @@ const Notion = {
             ...posts[0]
         };
 
-        post.contents = await this.getChildern(post.id);
+        post?.contents = await this.getChildern(post?.id);
 
         return post;
     },
@@ -165,11 +165,11 @@ const Notion = {
 
         let post: any = response.results[0];
 
-        let views = this.getProperties(post.properties.views);
+        let views = this.getProperties(post?.properties.views);
         views = views ? views + 1 : 1;
 
         return await notion.pages.update({
-            page_id: post.id,
+            page_id: post?.id,
             properties: {
                 views: {
                     number: views
@@ -279,26 +279,26 @@ const Notion = {
     async convertNotionDatabaseToPosts(notionDatabase: any) {
         return await Promise.all(
             notionDatabase.map(async (post: any) => {
-                const mdblocks = await n2m.pageToMarkdown(post.id);
+                const mdblocks = await n2m.pageToMarkdown(post?.id);
                 const mdString = n2m.toMarkdownString(mdblocks);
 
                 const { minutes } = readingTime(mdString);
 
                 return {
-                    id: post.id,
-                    title: this.getProperties(post.properties.title)?.content ?? null,
-                    cover: this.getProperties(post.cover)?.url ?? null,
-                    published: this.getProperties(post.properties.published) ?? null,
-                    slug: this.getProperties(post.properties.slug).content,
+                    id: post?.id,
+                    title: this.getProperties(post?.properties.title)?.content ?? null,
+                    cover: this.getProperties(post?.cover)?.url ?? null,
+                    published: this.getProperties(post?.properties.published) ?? null,
+                    slug: this.getProperties(post?.properties.slug).content,
                     tags:
-                        this.getProperties(post.properties.tags, true).map((x: any) => x.name) ||
+                        this.getProperties(post?.properties.tags, true).map((x: any) => x.name) ||
                         [],
-                    authors: this.getProperties(post.properties.authors, true),
-                    description: this.getProperties(post.properties.description).content,
-                    featured: this.getProperties(post.properties.featured),
+                    authors: this.getProperties(post?.properties.authors, true),
+                    description: this.getProperties(post?.properties.description).content,
+                    featured: this.getProperties(post?.properties.featured),
                     readingTime: Math.ceil(minutes),
-                    views: this.getProperties(post.properties.views),
-                    language: this.getProperties(post.properties.language)?.name
+                    views: this.getProperties(post?.properties.views),
+                    language: this.getProperties(post?.properties.language)?.name
                 };
             })
         );

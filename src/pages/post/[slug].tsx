@@ -39,7 +39,7 @@ const PostPage = ({ slug, post, relatedPosts, head, giscus, options }: PostPageP
         }
 
         if (scrollY >= scrollHeight * 0.4 && !(pathname in postsLocal)) {
-            fetch(Route.api.post.updateViews(slug, locale), { method: 'POST' });
+            fetch(Route.api.post?.updateViews(slug, locale), { method: 'POST' });
             postsLocal[pathname] = moment().toISOString();
             localStorage.setItem(Constant.LOCALSTORAGE_POSTS, JSON.stringify(postsLocal));
         }
@@ -66,8 +66,8 @@ const PostPage = ({ slug, post, relatedPosts, head, giscus, options }: PostPageP
                     <div className="pb-4 dark:border-gray-600">
                         <div className="relative w-full aspect-[5/2] rounded-lg overflow-hidden">
                             <Image
-                                src={post.cover}
-                                alt={post.title}
+                                src={post?.cover}
+                                alt={post?.title}
                                 fill
                                 sizes="(max-width: 768px) 50vw,
                         (max-width: 1200px) 50vw,
@@ -80,23 +80,23 @@ const PostPage = ({ slug, post, relatedPosts, head, giscus, options }: PostPageP
                         </div>
 
                         <h1 className="mt-4 text-xl font-bold leading-none tracking-tight text-gray-900 md:text-2xl lg:text-4xl dark:text-white">
-                            {post.title}
+                            {post?.title}
                         </h1>
                         <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
-                            {trans.post.published_at_by(
-                                post.published.start,
-                                post.authors[0].name,
+                            {trans.post?.published_at_by(
+                                post?.published.start,
+                                post?.authors[0].name,
                                 locale
                             )}
                         </p>
                         <div className="mt-6 flex items-center justify-start gap-2 text-sm font-medium text-gray-600 dark:text-gray-300">
                             <div className="flex items-center gap-1">
                                 <Icon icon="HiOutlineClock" />
-                                <span>{trans.post.reading_time(post.readingTime)}</span>
+                                <span>{trans.post?.reading_time(post?.readingTime)}</span>
                             </div>
                             <div className="flex items-center gap-1">
                                 <Icon icon="HiEye" />
-                                <span>{trans.post.views(post.views)}</span>
+                                <span>{trans.post?.views(post?.views)}</span>
                             </div>
                         </div>
                     </div>
@@ -105,23 +105,23 @@ const PostPage = ({ slug, post, relatedPosts, head, giscus, options }: PostPageP
 
                     <div className="lg:grid lg:grid-cols-[auto,250px] lg:gap-4 mt-4">
                         <section className="md:mr-6 leading-7 text-justify w-auto">
-                            <NotionRender contents={post.contents} />
+                            <NotionRender contents={post?.contents} />
 
                             <span>
                                 {trans.tag.tags}:{' '}
-                                {post.tags.map((tag: any, index: number) => (
+                                {post?.tags.map((tag: any, index: number) => (
                                     <Tag key={index} name={tag} />
                                 ))}
                             </span>
                         </section>
 
                         <div className="relative">
-                            <TableOfContents data={post.contents} />
+                            <TableOfContents data={post?.contents} />
                         </div>
 
                         <div className="md:col-span-2 mb-2 mt-4">
                             <span className="mb-2 text-2xl font-bold text-gray-800 dark:text-gray-100">
-                                {trans.post.relate_post}
+                                {trans.post?.relate_post}
                             </span>
                             <PostList posts={stateRelatedPosts} limit={3} />
                         </div>
@@ -139,9 +139,9 @@ export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
 
     let paths = posts.map((post: any) => ({
         params: {
-            slug: post.slug
+            slug: post?.slug
         },
-        locale: post.language
+        locale: post?.language
     }));
 
     return {
@@ -176,17 +176,17 @@ export const getStaticProps: GetStaticProps = async (context) => {
     };
 
     if (post) {
-        if (post.language !== locale) {
+        if (post?.language !== locale) {
             return {
                 notFound: true
             };
         }
-        let tags = post.tags;
+        let tags = post?.tags;
         relatedPosts = [...posts]
             .filter(
                 (x) =>
                     x.tags.some((y: any) => tags.includes(y)) &&
-                    x.id !== post.id &&
+                    x.id !== post?.id &&
                     context.locale === x.language
             )
             .map((value) => ({ value, sort: Math.random() }))

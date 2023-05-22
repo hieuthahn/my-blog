@@ -59,7 +59,7 @@ const vi = {
                 },
                 {
                     icon: 'FaFacebook',
-                    title: 'Nguyễn Thành Hiếu',
+                    title: 'hieuthahn',
                     link: 'https://facebook.com/hieuthahn/'
                 },
                 {

@@ -113,7 +113,7 @@ const Notion = {
             ...posts[0]
         };
 
-        post?.contents = await this.getChildern(post?.id);
+        post.contents = await this.getChildren(post?.id);
 
         return post;
     },
@@ -257,7 +257,7 @@ const Notion = {
         return navigation;
     },
 
-    async getChildern(id: string) {
+    async getChildren(id: string) {
         let _this = this;
         const response = await notion.blocks.children.list({
             block_id: id
@@ -268,7 +268,7 @@ const Notion = {
         for (let i in results) {
             let item = results[i];
             if (item.has_children) {
-                let children = await _this.getChildern(item.id);
+                let children = await _this.getChildren(item.id);
                 results[i].children = children;
             }
         }

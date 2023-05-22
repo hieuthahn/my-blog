@@ -7,14 +7,14 @@ interface HeaderProps {
 }
 
 const Header = ({ settings, navigation }: HeaderProps) => {
-    const siteName = settings?.site_name ?? 'Howz Nguyen Blog';
+    const siteName = settings?.site_name ?? 'HieuThahn Blog';
 
     return (
         <div className="flex items-center justify-between">
             <Logo title={siteName} />
             <div className="flex items-center">
                 <Navigation navigation={navigation} />
-                <div className="hidden md:flex items-center gap-x-2">
+                <div className="items-center hidden md:flex gap-x-2">
                     <LangugeSwither />
                     <ThemeSwitcher />
                 </div>

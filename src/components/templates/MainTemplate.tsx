@@ -15,7 +15,7 @@ const MainTemplate = ({ children, head, options }: MainTemplateProps) => {
     let headMeta = HeadMeta(options, head);
 
     return (
-        <>
+        <div className="app-container">
             <NextSeo
                 title={headMeta.siteTitle}
                 description={headMeta.siteDescription}
@@ -40,14 +40,28 @@ const MainTemplate = ({ children, head, options }: MainTemplateProps) => {
                 <link rel="icon" href={Route.defaultLogo(true)} />
                 <meta name="author" content={headMeta.author} />
             </Head>
-            <div className="w-full py-2 sticky top-0 z-50 transition-shadow shadow-sm bg-white dark:bg-dark mb-2">
-                <div className="layout">
+            <nav className="sticky top-0 z-[9999] w-full py-2 mb-2 transition-shadow bg-white shadow-sm dark:bg-[#00000080] bg-[#ffffffcc] backdrop-blur-[10px] dark:backdrop-saturate-[100%] backdrop-saturate-[180%]">
+                <div className="layout ">
                     <Header settings={settings} navigation={navigation} />
                 </div>
-            </div>
-            {children}
+            </nav>
+            <main className="relative">
+                <div className="relative z-10">{children}</div>
+
+                <img
+                    draggable={false}
+                    className="select-none fixed block bottom-[-50%] left-[-10%] right-[-50%] transition"
+                    src={'/assets/images/gradient-left-dark.svg'}
+                />
+                <img
+                    draggable={false}
+                    className="fixed top-[-30%] right-[-45%] md:right-0 md:top-0 lg:top-[-50%] lg:bottom-[-50%] lg:right-[-50%] block transition"
+                    src={'/assets/images/gradient-right-dark.svg'}
+                />
+            </main>
+
             <Footer />
-        </>
+        </div>
     );
 };
 export default MainTemplate;

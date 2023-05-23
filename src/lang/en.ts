@@ -55,7 +55,7 @@ const en = {
             header: "Hi, I'm Hiếu (HieuThahn)",
             description:
                 'I am currently a Web Developer. This is a website I created with the desire to share my knowledge to everyone. Thank you to everyone who visited. ❤️',
-            image: '/assets/images/orion-nebula.jpg',
+            image: '/assets/images/homepage-cover-right.jpg',
             links: [
                 {
                     icon: 'HiOutlineNewspaper',

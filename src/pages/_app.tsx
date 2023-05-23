@@ -12,7 +12,7 @@ export default function App({ Component, pageProps }: AppProps) {
     return (
         <>
             <GoogleAnalytics trackPageViews />
-            <ThemeProvider attribute="class" defaultTheme={'light'}>
+            <ThemeProvider attribute="class" defaultTheme={'dark'}>
                 <Component {...pageProps} />
             </ThemeProvider>
         </>

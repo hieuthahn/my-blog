@@ -50,7 +50,7 @@ const vi = {
             header: 'Xin chào, Mình là Hiếu (HieuThahn)',
             description:
                 'Mình hiện tại đang là một Lập Trình Viên Web. Đây là một website mình tạo ra với mong muốn được chia sẻ kiến thức của mình đến với mọi người. Cảm ơn mọi người đã ghé qua. ❤️',
-            image: '/assets/images/orion-nebula.jpg',
+            image: '/assets/images/homepage-cover-right.jpg',
             links: [
                 {
                     icon: 'HiOutlineNewspaper',
@@ -109,7 +109,7 @@ const vi = {
             return `${min} phút đọc`;
         },
         views: (views: any) => {
-            return `${views} lượt xem`;
+            return `${views ?? 0} lượt xem`;
         },
         tags: 'Tags',
         relate_post: 'Những Bài Viết Liên Quan:',

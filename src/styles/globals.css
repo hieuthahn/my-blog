@@ -27,7 +27,7 @@
 
 @layer components {
     .layout {
-        max-width: 70rem;
+        max-width: 65rem;
         margin-left: auto;
         margin-right: auto;
         width: 91.666667%;
@@ -58,6 +58,12 @@
 
     .cursor-newtab {
         cursor: url(/assets/images/new-tab.png) 10 10, pointer;
+    }
+
+    .bg-glass-card {
+        backdrop-filter: blur(30px);
+        @apply bg-transparent shadow;
+        border: 1px solid rgba(255, 255, 255, 0.1);
     }
 }
 

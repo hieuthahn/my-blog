@@ -39,8 +39,8 @@ module.exports = {
                     800: '#846358',
                     900: '#43302b'
                 },
-                dark: '#222222',
-                primary: '#3E54AC'
+                dark: '#000',
+                primary: '#0072F5'
             }
         }
     },

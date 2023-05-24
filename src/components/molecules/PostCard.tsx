@@ -16,7 +16,7 @@ const PostCard = ({ post }: PostCardProps) => {
                 href={Route.post(post?.slug)}
                 locale={post?.language}
                 className="block h-full rounded-md focus:outline-none focus-visible:ring focus-visible:ring-primary-300">
-                <div className="flex flex-col h-full p-3">
+                <div className="flex flex-col h-full p-2.5">
                     <div className="relative mb-3">
                         <figure className="w-full overflow-hidden h-44 rounded-tl-md rounded-tr-md">
                             <Image
@@ -41,16 +41,16 @@ const PostCard = ({ post }: PostCardProps) => {
                     <span className="text-base font-bold text-gray-800 dark:text-gray-100 line-clamp-3">
                         {post?.title}
                     </span>
-                    <div className="flex flex-col pt-3 mt-auto space-y-2">
+                    <div className="flex flex-col pt-3 space-y-2">
                         <div className="flex flex-wrap items-center justify-start gap-1 text-sm font-medium text-gray-600 dark:text-gray-300">
-                            <div className="flex items-center gap-1">
-                                {/* <Icon icon="HiEye" /> */}
-                                {/* <span>{trans.post?.views(post?.views)}</span> */}
+                            {/* <div className="flex items-center gap-1">
+                                <Icon icon="HiEye" />
+                                <span>{trans.post?.views(post?.views)}</span>
                                 <span>
                                     <DateTime value={post?.published?.start} />
                                 </span>
                             </div>
-                            <span className="inline-block md:hidden lg:inline-block">•</span>
+                            <span className="inline-block md:hidden lg:inline-block">•</span> */}
                             <div className="flex items-center gap-1">
                                 {/* <Icon icon="HiOutlineClock" /> */}
                                 <span>{trans.post?.reading_time(post?.readingTime)}</span>
@@ -61,9 +61,9 @@ const PostCard = ({ post }: PostCardProps) => {
                                 <DateTime value={post?.published?.start} />
                             </span>
                         </p> */}
-                        {/* <p className="text-sm text-gray-700 dark:text-gray-300 line-clamp-3">
+                        <p className="text-sm text-gray-700 dark:text-gray-300 line-clamp-3">
                             {post?.description}
-                        </p> */}
+                        </p>
                     </div>
                 </div>
             </Link>

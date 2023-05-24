@@ -15,9 +15,7 @@ const IntroCard = ({}: IntroCard) => {
             className="relative min-h-screen text-center text-black md:py-24 lg:text-left dark:text-white">
             <div className="grid items-center pt-10 lg:grid-cols-2">
                 <div className="mb-0">
-                    <div
-                        className="relative block px-6 py-12 bg-transparent rounded-lg shadow-lg md:px-12 lg:-mr-14"
-                        style={{ backdropFilter: 'blur(20px)', zIndex: 1 }}>
+                    <div className="relative z-10 block px-6 py-12 rounded-lg shadow-lg bg-white/10 md:px-10 lg:-mr-12">
                         <h2 className="mb-4 text-xl font-bold md:text-3xl display-5">
                             {trans.home.intro.header}
                         </h2>
@@ -41,7 +39,7 @@ const IntroCard = ({}: IntroCard) => {
                         draggable={false}
                         src={trans.home.intro.image}
                         fill
-                        className="object-cover w-full shadow-lg fancy-border-radius rotate-lg-6"
+                        className="object-cover w-full shadow-lg bg-mask-border rotate-lg-6"
                         alt=""
                     />
                 </div>

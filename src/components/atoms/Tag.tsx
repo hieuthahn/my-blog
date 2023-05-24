@@ -10,7 +10,7 @@ const Tag = ({ name }: TagProps) => {
         <object type="owo/uwu">
             <Link
                 href={Route.tag.get(name)}
-                className="flex items-center justify-center px-[0.5rem] py-[0.375rem] hover:bg-primary rounded-full bg-[#697177] leading-[1] text-[0.75rem] font-semibold place-content-center text-white">
+                className="inline-block backdrop-blur-3xl bg-black/40 dark:bg-white/10  px-[0.5rem] py-[0.375rem] hover:bg-primary rounded-full leading-[1] text-[0.75rem] font-semibold place-content-center text-white">
                 {name}
             </Link>
         </object>

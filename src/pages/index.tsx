@@ -28,7 +28,7 @@ const HomePage = ({ featuredPosts, categoriesPosts, head, options }: HomePagePro
                                 {trans.home.featured_posts}
                             </span>
                             <PostList posts={featuredPosts} limit={6} className="mt-3" />
-                            <Button className="mt-4 scale-100 hover:scale-[1.1] active:scale-[0.97] motion-safe:transform-gpu transition duration-100">
+                            <Button className="mt-4 transition duration-100 motion-safe:transform-gpu">
                                 <Link href={Route.blog()}>{trans.home.read_more}</Link>
                             </Button>
                         </div>

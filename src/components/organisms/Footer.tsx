@@ -7,7 +7,7 @@ const Footer = ({}: FooterProps) => {
     const trans = useTrans();
 
     return (
-        <footer className="pb-2 mt-4">
+        <footer className="relative z-[10] pb-2 mt-4">
             <main className="flex flex-col items-center pt-6 border-t layout dark:border-gray-600">
                 <div className="flex flex-wrap justify-center gap-y-4 gap-x-8">
                     {trans.footer.links &&
@@ -34,8 +34,8 @@ const Footer = ({}: FooterProps) => {
                 </div>
 
                 <p className="mt-4 text-sm text-gray-600 dark:text-gray-300">
-                    © {new Date().getFullYear()} - {trans.footer.build_with}
-                    <Link href="https://nextjs.org/" target="_blank">
+                    © {new Date().getFullYear()} -{/* {trans.footer.build_with} */}
+                    {/* <Link href="https://nextjs.org/" target="_blank">
                         Next.js
                     </Link>
                     ,{' '}
@@ -49,8 +49,10 @@ const Footer = ({}: FooterProps) => {
                     . {trans.footer.develop_by}
                     <Link href="https://github.com/hieuthahn" target="_blank">
                         @hieuthahn
-                    </Link>
-                    {trans.footer.with} ❤️ .
+                    </Link> */}
+                    {/* {trans.footer.with} */}
+                    {' Made with'}
+                    <i>❤️ love, 🔥 passion, and a ⌨️ keyboard.</i>
                 </p>
             </main>
         </footer>

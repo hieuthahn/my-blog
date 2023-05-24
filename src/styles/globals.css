@@ -65,6 +65,11 @@
         @apply bg-transparent shadow;
         border: 1px solid rgba(255, 255, 255, 0.1);
     }
+
+    .bg-mask-border {
+        -webkit-mask-box-image: url(/assets/images/background-avatar.svg);
+        mask-border: url(/assets/images/background-avatar.svg);
+    }
 }
 
 @media (min-width: 768px) {

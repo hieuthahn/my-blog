@@ -75,7 +75,7 @@ const PostPage = ({ slug, post, relatedPosts, head, giscus, options }: PostPageP
                                 loading="lazy"
                                 placeholder="blur"
                                 blurDataURL={`data:image/svg+xml;base64,${ImageHelper.generaterImagePlaceholder()}`}
-                                className="absolute inset-0 w-full h-full object-cover"
+                                className="absolute inset-0 object-cover w-full h-full"
                             />
                         </div>
 
@@ -89,7 +89,7 @@ const PostPage = ({ slug, post, relatedPosts, head, giscus, options }: PostPageP
                                 locale
                             )}
                         </p>
-                        <div className="mt-6 flex items-center justify-start gap-2 text-sm font-medium text-gray-600 dark:text-gray-300">
+                        <div className="flex items-center justify-start gap-2 mt-6 text-sm font-medium text-gray-600 dark:text-gray-300">
                             <div className="flex items-center gap-1">
                                 <Icon icon="HiOutlineClock" />
                                 <span>{trans.post?.reading_time(post?.readingTime)}</span>
@@ -104,10 +104,10 @@ const PostPage = ({ slug, post, relatedPosts, head, giscus, options }: PostPageP
                     <hr className="dark:border-gray-600" />
 
                     <div className="lg:grid lg:grid-cols-[auto,250px] lg:gap-4 mt-4">
-                        <section className="md:mr-6 leading-7 text-justify w-auto">
+                        <section className="w-auto leading-7 text-justify md:mr-6">
                             <NotionRender contents={post?.contents} />
 
-                            <span>
+                            <span className="flex flex-wrap gap-2">
                                 {trans.tag.tags}:{' '}
                                 {post?.tags.map((tag: any, index: number) => (
                                     <Tag key={index} name={tag} />
@@ -119,7 +119,7 @@ const PostPage = ({ slug, post, relatedPosts, head, giscus, options }: PostPageP
                             <TableOfContents data={post?.contents} />
                         </div>
 
-                        <div className="md:col-span-2 mb-2 mt-4">
+                        <div className="mt-4 mb-2 md:col-span-2">
                             <span className="mb-2 text-2xl font-bold text-gray-800 dark:text-gray-100">
                                 {trans.post?.relate_post}
                             </span>

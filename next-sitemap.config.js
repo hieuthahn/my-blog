@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-    siteUrl: 'https://hieuthahn.vercel.app',
+    siteUrl: 'https://hieuthahn.bio',
     generateRobotsTxt: true,
     changefreq: 'daily',
     priority: 0.7,
@@ -14,6 +14,6 @@ module.exports = {
                 disallow: ['/post/[slug]', '/tag/[tag]']
             }
         ],
-        additionalSitemaps: ['https://hieuthahn.vercel.app/sitemap-hieuthahn.xml']
+        additionalSitemaps: ['https://hieuthahn.bio/sitemap-hieuthahn.xml']
     }
 };

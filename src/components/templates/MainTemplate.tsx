@@ -3,6 +3,9 @@ import { Footer, Header } from '@/components/organisms';
 import Head from 'next/head';
 import { NextSeo } from 'next-seo';
 import { HeadMeta, Route } from '@/lib';
+import Image from 'next/image';
+import backgroundRight from '../../../public/assets/images/gradient-right-dark.svg'
+import backgroundLeft  from '../../../public/assets/images/gradient-left-dark.svg'
 
 interface MainTemplateProps {
     children: React.ReactNode;
@@ -48,15 +51,17 @@ const MainTemplate = ({ children, head, options }: MainTemplateProps) => {
             <main className="relative">
                 <div className="relative z-10">{children}</div>
 
-                <img
-                    draggable={false}
+                <Image
+                    alt='background-left'
+                    // draggable={false}
                     className="select-none fixed block bottom-[-50%] left-[-10%] right-[-50%] transition"
-                    src={'/assets/images/gradient-left-dark.svg'}
+                    src={backgroundLeft}
                 />
-                <img
-                    draggable={false}
+                <Image
+                     alt='background-right'
+                    // draggable={false}
                     className="fixed top-[-30%] right-[-45%] md:right-0 md:top-0 lg:top-[-50%] lg:bottom-[-50%] lg:right-[-50%] block transition"
-                    src={'/assets/images/gradient-right-dark.svg'}
+                    src={backgroundRight}
                 />
             </main>
 

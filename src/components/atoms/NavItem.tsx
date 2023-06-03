@@ -12,13 +12,13 @@ const NavItem = ({ isMobile, data }: NavItemProps) => {
     const { locale, pathname } = useRouter();
     const [isShowChildMenu, setShowChildMenu] = React.useState(false);
     const children = data.children;
-
+    
     return isMobile ? (
         <>
             <div
-                className={`flex justify-between w-full px-3 py-1 m-1 transition-colors dark:text-white ${
-                    data?.url === pathname ? 'text-primary dark:text-primary' : ''
-                }`}>
+                className={` ${
+                    data?.url === pathname ? '!text-primary' : 'dark:text-white'
+                } flex justify-between w-full px-3 py-1 m-1 transition-colors `}>
                 <Link
                     href={data.url ?? '#'}
                     locale={locale}
@@ -59,9 +59,9 @@ const NavItem = ({ isMobile, data }: NavItemProps) => {
         </>
     ) : (
         <div
-            className={`relative mr-3 transition-colors nav-item dark:text-white hover:dark:text-primary hover:text-primary ${
-                data?.url === pathname ? 'text-primary dark:text-primary' : ''
-            }`}>
+            className={` ${
+                data?.url === pathname ? '!text-primary' : 'dark:text-white'
+            } relative mr-3 transition-colors nav-item hover:dark:text-primary hover:text-primary`}>
             <Link
                 href={data.url ?? '#'}
                 locale={locale}

@@ -7,11 +7,11 @@ interface PostListProps {
 }
 
 const PostList = ({ posts, limit, className }: PostListProps) => {
-    if (posts.length === 0) return <></>;
+    if (!posts || posts?.length === 0) return <></>;
 
     return (
         <div className={`grid grid-cols-1 gap-8 place-items-stretch md:grid-cols-3 ${className}`}>
-            {posts.slice(0, limit).map((post: any, index: number) => (
+            {posts?.slice(0, limit)?.map((post: any, index: number) => (
                 <PostCard key={index} post={post} />
             ))}
         </div>

@@ -14,6 +14,7 @@ interface HomePageProps {
 
 const HomePage = ({ featuredPosts, categoriesPosts, head, options }: HomePageProps) => {
     const trans = useTrans();
+    
     return (
         <>
             <MainTemplate head={head} options={options}>
@@ -25,25 +26,25 @@ const HomePage = ({ featuredPosts, categoriesPosts, head, options }: HomePagePro
                     <section className="pb-5 md:pb-10 fade-in-start">
                         <div data-fade="0" id="featured-post" className="scroll-mt-[70px]">
                             <span className="mb-2 text-4xl font-bold text-gray-800 dark:text-gray-100">
-                                {trans.home.featured_posts}
+                                {trans?.home.featured_posts}
                             </span>
                             <PostList posts={featuredPosts} limit={6} className="mt-3" />
                             <Button className="mt-4 transition duration-100 motion-safe:transform-gpu">
-                                <Link href={Route.blog()}>{trans.home.read_more}</Link>
+                                <Link href={Route?.blog()}>{trans?.home.read_more}</Link>
                             </Button>
                         </div>
                     </section>
 
-                    {categoriesPosts.map((category, index) => (
+                    {categoriesPosts?.map((category, index) => (
                         <section key={index} className="py-5 md:py-10 fade-in-start">
                             <div data-fade="0">
                                 <span className="mb-2 text-4xl font-bold text-gray-800 dark:text-gray-100">
-                                    {category.name}
+                                    {category?.name}
                                 </span>
                                 <p className="mt-2 text-gray-600 dark:text-gray-300">
-                                    {category.description}
+                                    {category?.description}
                                 </p>
-                                <PostList posts={category.posts} limit={6} className="mt-3" />
+                                <PostList posts={category?.posts} limit={6} className="mt-3" />
                             </div>
                         </section>
                     ))}

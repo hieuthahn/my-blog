@@ -10,6 +10,10 @@ interface PostCardProps {
 const PostCard = ({ post }: PostCardProps) => {
     const trans = useTrans();
 
+    if (!post) {
+        return <></>
+    }
+
     return (
         <div className="w-full rounded-lg bg-glass-card hover:border-[#a8b3cf66]">
             <Link
@@ -20,7 +24,7 @@ const PostCard = ({ post }: PostCardProps) => {
                     <div className="relative mb-3">
                         <figure className="w-full overflow-hidden h-44 rounded-tl-md rounded-tr-md">
                             <Image
-                                src={post?.cover}
+                                src={post?.cover || `data:image/svg+xml;base64,${ImageHelper.generaterImagePlaceholder()}`}
                                 alt={post?.title}
                                 fill
                                 sizes="(max-width: 768px) 100vw,
